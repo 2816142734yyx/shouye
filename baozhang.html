@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿魂的藏宝阁</title>
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <!-- 引入暗色模式图标库 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+
+    <style>
+        /* 背景 */
+        body {
+            font: 100 20px 'font-h';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #ffe259, #ffa751);
+        }
+
+        body .shell-main-nav ul .nav-box {
+            left: 465px;
+        }
+
+        body {
+            background-color: rgb(248, 248, 248);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        body .shell-main-nav {
+            margin-bottom: 0;
+        }
+
+        /* 切换按钮 */
+        .switch {
+            border: 1px solid #c4c7ce;
+            width: 60px;
+            height: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 6px;
+            border-radius: 15px;
+            cursor: pointer;
+            position: fixed;
+            top: 85%;
+            right: 1.9%;
+            z-index: 9999;
+            /* 将z-index属性的值设置为9999 */
+            background-color: #fff;
+            /* 将背景颜色设置为白色 */
+        }
+
+
+        /* 滑块 */
+        .switch::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #4e6ef2;
+            position: absolute;
+            left: 3px;
+            transition: 0.2s ease-out;
+
+        }
+
+        .switch.dark::before {
+            left: 63%;
+        }
+
+        /* 图标 */
+        .switch .fa {
+            font-size: 18px;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 暗色模式 -->
+    <div class="switch">
+        <i class="fa fa-sun-o"></i>
+        <i class="fa fa-moon-o"></i>
+    </div>
+
+    <div class="shell">
+        <div class="shell-main">
+            <div class="shell-main-nav">
+                <div class="logo">
+                    <img src="./image/logo.jpg" alt="">
+                    <span>阿魂</span>
+                </div>
+                <ul>
+                    <li><a href="./index.html">阿魂</a></li>
+                    <li><a href="./ziyuan.html">资源</a></li>
+                    <li><a href="./toufa.html">头发</a></li>
+                    <li><a href="./baozhang.html">宝藏</a></li>
+                    <div class="nav-box"></div>
+                </ul>
+            </div>
+
+
+            <div class="container">
+                <div class="card" style="--clr: #009688;">
+                    <div class="imgBox">
+                        <img src="./image/wz.png">
+                    </div>
+                    <div class="content">
+                        <h2>阿魂视频网</h2>
+                        <p>自由轻松观看电影、电视剧、动漫，图集等众多内容</p>
+                        <a href="#">测试中</a>
+                    </div>
+                </div>
+                <div class="card" style="--clr: #ff3e7f;">
+                    <div class="imgBox">
+                        <img src="./image/logo.jpg">
+                    </div>
+                    <div class="content">
+                        <h2>魂盘</h2>
+                        <p>自在不限量存储你想存储的东西，无任何违规检测，自在快活（邀请）</p>
+                        <a href="https://nitsol.xyz">测试中</a>
+                    </div>
+                </div>
+                <div class="card" style="--clr: #03a9f4;">
+                    <div class="imgBox">
+                        <img src="./image/wz.png">
+                    </div>
+                    <div class="content">
+                        <h2>测试测试</h2>
+                        <p>测试测试测试测试测试测试测试测试测试测试测试测试测试测试</p>
+                        <a href="#">走你</a>
+                    </div>
+                </div>
+                <div class="card" style="--clr: #009688;">
+                    <div class="imgBox">
+                        <img src="./image/TU.jpg">
+                    </div>
+                    <div class="content">
+                        <h2>测试测试</h2>
+                        <p>测试测试测试测试测试测试测试测试测试测试测试测试测试测试</p>
+                        <a href="#">走你</a>
+                    </div>
+                </div>
+                <div class="card" style="--clr: #ff3e7f;">
+                    <div class="imgBox">
+                        <img src="./image/logo.jpg">
+                    </div>
+                    <div class="content">
+                        <h2>测试测试</h2>
+                        <p>测试测试测试测试测试测试测试测试测试测试测试测试测试测试</p>
+                        <a href="#">走你</a>
+                    </div>
+                </div>
+                <div class="card" style="--clr: #03a9f4;">
+                    <div class="imgBox">
+                        <img src="./image/wz.png">
+                    </div>
+                    <div class="content">
+                        <h2>测试测试</h2>
+                        <p>测试测试测试测试测试测试测试测试测试测试测试测试测试测试</p>
+                        <a href="#">走你</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <!-- 引用js -->
+    <script>
+
+        // 暗色模式
+        // 切换按钮
+        const btn = document.querySelector('.switch');
+
+        // 检测系统是否开启暗色模式
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // 系统开启了暗色模式，执行暗色模式的代码
+            btn.classList.add('dark');
+            let a = document.createElement('style');
+            a.id = 'aa';
+            a.innerHTML = '.container .card{background-color:#4d4d4d;} body {background: linear-gradient(48deg,#006da6,#ab6628);} .switch{background-color: #000;} .container .card .content p{color:#fff;} body .shell-main-nav {background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));} body .shell-main-nav ul li a {color: #fff;}body .shell-main-nav { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);}';
+            document.head.appendChild(a);
+        } else {
+            // 系统未开启暗色模式，执行默认模式的代码
+            btn.classList.remove('dark');
+            if (document.head.querySelector('#aa')) {
+                document.head.querySelector('#aa').remove();
+            }
+        }
+
+        btn.addEventListener('click', function () {
+            let is_dark = document.querySelector('.switch.dark');
+            if (!is_dark) {
+                // 切换为暗色主题
+                btn.classList.add('dark');
+                let a = document.createElement('style');
+                a.id = 'aa';
+                a.innerHTML = '.container .card{background-color:#4d4d4d;} body {background: linear-gradient(48deg,#006da6,#ab6628);} .switch{background-color: #000;} .container .card .content p{color:#fff;} body .shell-main-nav {background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));} body .shell-main-nav ul li a {color: #fff;}body .shell-main-nav {  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);}';
+                document.head.appendChild(a);
+            } else {
+                // 切换为亮色主题
+                btn.classList.remove('dark');
+                if (document.head.querySelector('#aa')) {
+                    document.head.querySelector('#aa').remove();
+                }
+            }
+        })
+
+
+
+    </script>
+</body>
+
+</html>

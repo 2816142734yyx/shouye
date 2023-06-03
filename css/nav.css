@@ -1,0 +1,229 @@
+body .shell-main {
+  
+  width: 100%;
+  height: auto;
+  position: relative;
+  transition: .2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+
+body .shell-main-nav {
+  width: 100%;
+  height: 70px;
+  position: sticky;
+  z-index: 999;
+  top: 0px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20vh;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.2));
+  backdrop-filter: blur(13px);
+  font: 120 25px 'font-R';
+}
+
+body .shell-main-nav .logo {
+  width: 145px;
+  height: 100%;
+  position: absolute;
+  left: 5%;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+body .shell-main-nav .logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 10%;
+}
+
+body .shell-main-nav .logo span {
+  font: 100 35px 'font';
+  letter-spacing: 5px;
+  color: #ffffff;
+  letter-spacing: 10px;
+  /* 兼容Webkit(Chrome/Safari)内核浏览器的写法 */
+  -webkit-text-stroke: 1.5px #ff7b00;
+
+}
+
+body .shell-main-nav ul {
+  width: 600px;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  right: 5%;
+}
+
+body .shell-main-nav ul .nav-box {
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  width: 115px;
+  height: 5px;
+  border-radius: 2px;
+  background-color: rgb(255, 102, 0);
+  z-index: -999;
+  transition: .5s;
+}
+
+body .shell-main-nav ul li {
+  width: 150px;
+  text-align: center;
+}
+
+body .shell-main-nav ul li a {
+  color: #000;
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 60px;
+  text-align: center;
+}
+
+body .shell-main-nav ul li:nth-child(1):hover~.nav-box {
+  left: 20px;
+  background-color: rgb(255, 102, 0);
+}
+
+body .shell-main-nav ul li:nth-child(2):hover~.nav-box {
+  left: 170px;
+  background-color: rgb(255, 102, 0);
+}
+
+body .shell-main-nav ul li:nth-child(3):hover~.nav-box {
+  left: 315px;
+  background-color: rgb(255, 102, 0);
+}
+
+body .shell-main-nav ul li:nth-child(4):hover~.nav-box {
+  left: 465px;
+  background-color: rgb(255, 102, 0);
+}
+
+
+.container
+{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+  gap: 100px 50px;
+  padding: 100px 50px;
+}
+
+.container .card
+{
+  position: relative;
+  width: 350px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 45px 80px rgba(0, 0, 0, .15);
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container .card:hover{
+  height: 400px;
+}
+
+.container .card .imgBox
+{
+  position: absolute;
+  top: 20px;
+  width: 300px;
+  height: 220px;
+  border-radius: 12px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.container .card:hover .imgBox
+{
+  top: -100px;
+  scale: 0.75;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, .2);
+}
+
+.container .card .imgBox img
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container .card .content
+{
+  position: absolute;
+  top: 252px;
+  width: 100%;
+  padding: 0 30px;
+  height: 35px;
+  overflow: hidden;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.container .card:hover .content
+{
+  top:130px;
+  height: 250px;
+}
+
+.container .card .content h2{
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--clr);
+}
+
+.container .card .content p
+{
+  color: #333;
+}
+
+.container .card .content a
+{
+  position: relative;
+  top:15px;
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: var(--clr);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+
+/* media */
+@media (max-width:768px) {
+  body .shell-main-nav ul {
+    transform: scale(.7);
+    right: -60px;
+    top: 2px;
+  }
+}
+
+@media (max-width:600px) {
+  body .shell-main-nav .logo {
+    display: none;
+  }
+
+  body .shell-main-nav ul {
+    transform: scale(.6);
+    right: -130px;
+  }
+}
+

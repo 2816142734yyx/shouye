@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿魂的资源</title>
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/all.css">
+
+    <!-- 引入暗色模式图标库 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <style>
+        body .shell-main-nav ul .nav-box {
+            left: 170px;
+        }
+
+        body .shell-main {
+            margin-bottom: 30px;
+        }
+
+        body .shell-main-nav {
+            margin-bottom: 0;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 100%;
+            background-color: #ffffff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* 上面的竖背景条 */
+        body .shell::before {
+            content: '';
+            width: 250px;
+            height: 100%;
+            background-image: linear-gradient(to bottom, #f09619, #edde5d);
+            position: absolute;
+            transform: translate(-145%, 0);
+            z-index: -999;
+            bottom: 0;
+        }
+
+        /* 下面的竖背景条 */
+        body .shell::after {
+            content: '';
+            width: 250px;
+            height: 100%;
+            background-image: linear-gradient(to bottom, #fccf31, #f55555);
+            position: absolute;
+            transform: translate(145%);
+            z-index: -999;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+            font: 100 20px 'font-R';
+        }
+
+        .sidebar a:hover {
+            color: #4e6ef2;
+        }
+
+
+
+        .images img {
+            height: auto;
+            width: 200px;
+            transition: .3s;
+            opacity: 0.8;
+        }
+
+        /* 下载模块 */
+        .wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+        }
+
+        /* 间隔5px */
+        .wrapper {
+            padding: 5px 0;
+        }
+
+        .images {
+            width: 10%;
+            padding: 20px;
+            display: flex;
+            /*添加 display:flex; 属性*/
+            justify-content: center;
+            /*添加 justify-content:center; 属性*/
+            align-items: center;
+            /*添加 align-items:center; 属性*/
+
+        }
+
+        .image-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+
+        }
+
+        /* 图片大小 */
+        .image-container img {
+            border: 1px solid #000;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin: 1px;
+            padding: 1px;
+            border-radius: 20px;
+        }
+
+        /* 下载模块的大小 */
+        .downloads {
+            backdrop-filter: blur(13px);
+            width: 85%;
+            padding: 20px;
+            background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0), rgba(223, 132, 12, 0.5));
+            border: 2px solid #000;
+            border-radius: 10px;
+            display: flex;
+            /*添加 display:flex; 属性*/
+            flex-wrap: wrap;
+            justify-content: space-between;
+            /*将下载地址放在边框最右边*/
+        }
+
+
+
+        /* 复制下载地址的按钮 */
+        .download-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+
+        }
+
+        .download-button:hover {
+            background-color: #368333;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .download-buttons p {
+            flex: 1;
+            /*使得一行内的多个p标签占据父元素空间比例相等*/
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            padding: 10px;
+            background-color: #4e6ef2;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+            z-index: 9999;
+        }
+
+        .wrapper h2 {
+            writing-mode: vertical-lr;
+            text-orientation: upright;
+        }
+
+        .downloads h3 {
+            font: 100 35px 'font';
+
+        }
+
+        .downloads span {
+            max-width: 200px;
+            font: 100 18px 'font-r';
+
+        }
+
+        .back-to-top:hover {
+
+            background-color: #4e6ef2;
+            cursor: pointer;
+        }
+
+        .show-back-to-top {
+            display: block;
+        }
+
+        /* 切换按钮 */
+        .switch {
+            border: 1px solid #c4c7ce;
+            width: 60px;
+            height: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 6px;
+            border-radius: 15px;
+            cursor: pointer;
+            position: fixed;
+            top: 85%;
+            right: 1.9%;
+            z-index: 9999;
+            /* 将z-index属性的值设置为9999 */
+            background-color: #fff;
+            /* 将背景颜色设置为白色 */
+
+        }
+
+        /* 滑块 */
+        .switch::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #4e6ef2;
+            position: absolute;
+            left: 3px;
+            transition: 0.2s ease-out;
+
+        }
+
+        .switch.dark::before {
+            left: 63%;
+        }
+
+        /* 图标 */
+        .switch .fa {
+            font-size: 18px;
+            color: #aaa;
+        }
+
+        .zoomable-image {
+            cursor: pointer;
+        }
+
+        .zoomed-img {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .zoomed-img img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border: 1px solid #000;
+            border-radius: 20px;
+            margin: 1px;
+            padding: 1px;
+        }
+
+
+        @media (max-width: 600px) {
+            .image-container {
+                flex-direction: column;
+            }
+
+            .button-container {
+                margin-top: 10px;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+
+            .download-button {
+                width: 100%;
+            }
+        }
+
+
+        @keyframes show {
+            0% {
+                opacity: 0.5;
+                width: 0;
+                height: 0;
+            }
+
+            100% {
+                opacity: 0;
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        #scroll-btn {
+            padding: 10px 20px;
+            background-color: #4e6ef2;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            /* 将文字居中显示 */
+        }
+
+        #scroll-btn:hover {
+            background-color: #2750f3;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 暗色模式 -->
+    <div class="switch">
+        <i class="fa fa-sun-o"></i>
+        <i class="fa fa-moon-o"></i>
+    </div>
+    <!-- 网页跳转 -->
+    <div class="shell">
+        <div class="shell-main">
+            <div class="shell-main-nav">
+                <div class="logo">
+                    <img src="./image/logo.jpg" alt="">
+                    <span>阿魂</span>
+                </div>
+                <ul>
+                    <li><a href="./index.html">阿魂</a></li>
+                    <li><a href="./ziyuan.html">资源</a></li>
+                    <li><a href="./toufa.html">头发</a></li>
+                    <li><a href="./baozhang.html">宝藏</a></li>
+                    <div class="nav-box"></div>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 回到顶部按钮 -->
+        <a href="#" class="back-to-top">上去吧你</a>
+
+
+        <!-- 左侧分类跳转面板 -->
+        <div class="sidebar">
+            <ul>
+                <li><a href="#category1">软件下载</a></li>
+                <li><a href="#category2">PR</a></li>
+                <li><a href="#category3">AE</a></li>
+                <li><a href="#category4">PS</a></li>
+                <li><a href="#category5">AU</a></li>
+            </ul>
+        </div>
+
+        <!-- 第一个分类 -->
+        <h8 id="category1">资源均为电脑资源，所以本页面如果用手机端打开可能会出现问题</h8>
+        <h3>持续更新中：如果链接挂了</h3>
+        <h3 id="scroll-btn">告诉我</h3>
+        <h2>软件推荐</h2>
+
+
+        <!-- 下载模块 -->
+        <div class="wrapper">
+            <div class="downloads">
+                <h2>
+                    卸载工具
+                </h2>
+                <span>Geek是一款高效快速并且小巧便携，而且100%免费！
+                    它快速过滤需要卸载的内容，卸载完成后还会检查有没
+                    有流氓残留，一并删除，简单可见大小6.29 MB </span>
+                <div class="image-container"><img src="./资源页内容/软件下载/Geek-卸载工具/1.png" alt="" class="zoomable-image">
+                </div>
+                <div class="image-container"><img src="./资源页内容/软件下载/Geek-卸载工具/2.png" alt="" class="zoomable-image">
+                </div>
+                <div class="image-container"><img src="./资源页内容/软件下载/Geek-卸载工具/3.png" alt="" class="zoomable-image">
+                </div>
+                <div class="download-buttons">
+                    <h3>下载地址</h3>
+                    <p>百度网盘下载：<button class="download-button"
+                            onclick="copyToClipboard('https://pan.baidu.com/s/1S_oZ-Rz63XEQ44yZEelCFA?pwd=ahun')">复制下载地址</button>
+                    </p>
+                    <p>蓝奏云下载：<button class="download-button"
+                            onclick="copyToClipboard('https://wwwx.lanzoum.com/iu7su0xxaawj  密码:ffjw')">复制下载地址</button>
+                    </p>
+                    <p>咱自己家下载：暂未开放</p>
+                </div>
+            </div>
+        </div>
+        <!-- 下载模块 -->
+        <div class="wrapper">
+            <div class="downloads">
+                <h2>
+                    ME 2023
+                </h2>
+                <span>
+                    Adobe Media Encoder 是一个视频和音频编码程序，可针对不同应用程序和观众，
+                    以各种分发格式对音频和视频文件进行编码，还包括专门设计的预设设置以便导出与特定交付媒体兼容的文件。
+                </span>
+                <div class="image-container"><img src="./资源页内容/软件下载/ME 2023/1.png" alt="" class="zoomable-image"></div>
+                <div class="image-container"><img src="./资源页内容/软件下载/ME 2023/2.png" alt="" class="zoomable-image"></div>
+                <div class="image-container"><img src="./资源页内容/软件下载/ME 2023/3.jpg" alt="" class="zoomable-image"></div>
+                <div class="download-buttons">
+                    <h3>下载地址</h3>
+                    <p>百度网盘下载：<button class="download-button"
+                            onclick="copyToClipboard('https://pan.baidu.com/s/1gLNAQaltJR1jjfPOQTIdSQ?pwd=ahun')">复制下载地址</button>
+                    </p>
+                    <p>咱自己家下载：暂未开放</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第二个分类 -->
+        <h2 id="category2">PR相关</h2>
+        <!-- 下载模块 -->
+        <div class="wrapper">
+            <div class="downloads">
+                <h2>
+                    PR 2023
+                </h2>
+                <span>
+                    Premiere Pro是视频编辑爱好者和专业人士必不可少的视频编辑工具。
+                    它可以提升您的创作能力和创作自由度，它是易学、高效、精确的视频剪辑软件。
+                    满足您创建高质量作品的要求。
+                </span>
+                <div class="image-container"><img src="./资源页内容/PR/PR 2023/1.jpg" alt="" class="zoomable-image">
+                </div>
+                <div class="image-container"><img src="./资源页内容/PR/PR 2023/2.png" alt="" class="zoomable-image">
+                </div>
+                <div class="image-container"><img src="./资源页内容/PR/PR 2023/3.jpg" alt="" class="zoomable-image">
+                </div>
+                <div class="download-buttons">
+                    <h3>下载地址</h3>
+                    <p>百度网盘下载：<button class="download-button"
+                            onclick="copyToClipboard('https://pan.baidu.com/s/11bMzdSWj3bMMLOwQf4buDw?pwd=ahun')">复制下载地址</button>
+                    </p>
+                    <p>咱自己家下载：暂未开放</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- 第三个分类 -->
+        <h2 id="category3">AE相关</h2>
+        <!-- 下载模块 -->
+        <div class="wrapper">
+            <div class="downloads">
+                <h2>
+                    AE 2023
+                </h2>
+                <span>
+                    Adobe After Effects软件可以帮助您高效且精确地创建无数种引人注目的动态图形和震撼人心的视觉效果。
+                    利用与其他Adobe软件无与伦比的紧密集成和高度灵活的2D和3D合成
+                </span>
+                <div class="image-container"><img src="./资源页内容/AE/AE 2023/1.jpg" alt="" class="zoomable-image">
+                </div>
+                <div class="image-container"><img src="./资源页内容/AE/AE 2023/2.jpeg" alt="" class="zoomable-image">
+                </div>
+                <div class="image-container"><img src="./资源页内容/AE/AE 2023/3.jpg" alt="" class="zoomable-image">
+                </div>
+                <div class="download-buttons">
+                    <h3>下载地址</h3>
+                    <p>百度网盘下载：<button class="download-button"
+                            onclick="copyToClipboard('https://pan.baidu.com/s/1_DP3crS2lYWoQ3nnXTfzug?pwd=ahun')">复制下载地址</button>
+                    </p>
+                    <p>咱自己家下载：暂未开放</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 第四个分类 -->
+        <h2 id="category4">PS相关</h2>
+        <!-- 下载模块 -->
+        <div class="wrapper">
+            <div class="downloads">
+                <h2>
+                    PS 2023
+                </h2>
+                <span>
+                    Adobe Photoshop，简称“PS”，是由Adobe Systems开发和发行的图像处理软件。
+                    Photoshop主要处理以像素所构成的数字图像。使用其众多的编修与绘图工具，
+                    可以有效地进行图片编辑和创造工作。
+                </span>
+                <div class="image-container"><img src="./资源页内容/PS/PS 2023/1.jpg" alt="" class="zoomable-image">
+                </div>
+                <div class="image-container"><img src="./资源页内容/PS/PS 2023/2.jpeg" alt="" class="zoomable-image">
+                </div>
+                <div class="image-container"><img src="./资源页内容/PS/PS 2023/3.jpg" alt="" class="zoomable-image">
+                </div>
+                <div class="download-buttons">
+                    <h3>下载地址</h3>
+                    <p>百度网盘下载：<button class="download-button"
+                            onclick="copyToClipboard('https://pan.baidu.com/s/1TBh_tBfLCofe5C6deOdM1Q?pwd=ahun')">复制下载地址</button>
+                    </p>
+                    <p>咱自己家下载：暂未开放</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- 第五个分类 -->
+        <h2 id="category5">AU相关</h2>
+        <!-- 下载模块 -->
+        <div class="wrapper">
+            <div class="downloads">
+                <h2>
+                    AU 2023
+                </h2>
+                <span>
+                    Adobe Audition（简称Au，原名Cool Edit Pro）是由Adobe公司开发的一个专业音频编辑和混合环境。
+                    Audition专为在照相室、广播设备和后期制作设备方面工作的音频和视频专业人员设计，可提供先进的音频混合、编辑、控制和效果处理功能。
+                </span>
+                <div class="image-container"><img src="./资源页内容/AU/AU 2023/1.jpg" alt="" class="zoomable-image">
+                </div>
+                <div class="image-container"><img src="./资源页内容/AU/AU 2023/2.jpg" alt="" class="zoomable-image">
+                </div>
+                <div class="image-container"><img src="./资源页内容/AU/AU 2023/3.jpg" alt="" class="zoomable-image">
+                </div>
+                <div class="download-buttons">
+                    <h3>下载地址</h3>
+                    <p>百度网盘下载：<button class="download-button"
+                            onclick="copyToClipboard('https://pan.baidu.com/s/1FV0FRXUGmjpm6LrR66aLLA?pwd=ahun')">复制下载地址</button>
+                    </p>
+                    <p>咱自己家下载：暂未开放</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- 最下面 -->
+        <div class="shell-main-footer">
+            <span>连接挂了？想联系阿魂？那：</span>
+            <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=yfOp97HkEl0QXv1bzSa0Zfj9UxIDD2Qz&authKey=Kc%2BzZ6fR7DyPP7fZ40Aic2zkuCA7fjD6UkVw5sdN4TtmX6XeMpSxZ8llfHBk5uva&noverify=0&group_code=658127651"
+                title="点击跳转">阿魂の群</a>
+            <span>群主就阿魂~</span>
+        </div>
+
+        <!-- js区 -->
+        <script>
+            // 复制功能
+            function copyToClipboard(text) {
+                var input = document.createElement('input');
+                input.setAttribute('value', text);
+                document.body.appendChild(input);
+                input.select();
+                document.execCommand('copy');
+                document.body.removeChild(input);
+                alert('下载地址已复制到剪贴板');
+            }
+
+
+            // 滚动到底部
+            const scrollBtn = document.getElementById('scroll-btn');
+
+            scrollBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: 'smooth'
+                });
+            });
+
+            // 回到顶部
+
+            var backToTopButton = document.querySelector('.back-to-top');
+
+            window.addEventListener('scroll', function () {
+
+                if (window.pageYOffset > 200) {
+                    backToTopButton.classList.add('show-back-to-top');
+
+                } else {
+                    backToTopButton.classList.remove('show-back-to-top');
+                }
+            });
+
+
+            // 暗色模式
+            // 切换按钮
+            const btn = document.querySelector('.switch');
+
+            // 检测系统是否开启暗色模式
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                // 系统开启了暗色模式，执行暗色模式的代码
+                btn.classList.add('dark');
+                let a = document.createElement('style');
+                a.id = 'aa';
+                a.innerHTML = '.shell{background-color:#000;} h2{color:#fff;} h3{color:#fff;} h8{color:#fff;} p{color:#fff;} span{color:#fff;} .sidebar {background-color: #000000;} .sidebar a {color: #ffffff;} body .shell-main-nav {background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);}body .shell-main-nav ul li a {color: #fff;}.switch{background-color: #000;}.downloads {border: 2px solid #fff;} .image-container img {border: 1px solid #fff;}';
+                document.head.appendChild(a);
+            } else {
+                // 系统未开启暗色模式，执行默认模式的代码
+                btn.classList.remove('dark');
+                if (document.head.querySelector('#aa')) {
+                    document.head.querySelector('#aa').remove();
+                }
+            }
+
+            btn.addEventListener('click', function () {
+                let is_dark = document.querySelector('.switch.dark');
+                if (!is_dark) {
+                    // 切换为暗色主题
+                    btn.classList.add('dark');
+                    let a = document.createElement('style');
+                    a.id = 'aa';
+                    a.innerHTML = '.shell{background-color:#000;} h2{color:#fff;} h3{color:#fff;} h8{color:#fff;} p{color:#fff;} span{color:#fff;} .sidebar {background-color: #000000;} .sidebar a {color: #ffffff;} body .shell-main-nav {background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);}body .shell-main-nav ul li a {color: #fff;}.switch{background-color: #000;}.downloads {border: 2px solid #fff;} .image-container img {border: 1px solid #fff;}';
+                    document.head.appendChild(a);
+                } else {
+                    // 切换为亮色主题
+                    btn.classList.remove('dark');
+                    if (document.head.querySelector('#aa')) {
+                        document.head.querySelector('#aa').remove();
+                    }
+                }
+            })
+
+
+
+            // 图片放大功能
+            // 获取所有的图片元素
+            var images = document.querySelectorAll('.zoomable-image');
+            // 为每个图片元素添加点击事件
+            images.forEach(function (image) {
+                image.addEventListener('click', function () {
+                    // 创建一个新的div元素，用于显示放大后的图片
+                    var zoomedImg = document.createElement('div');
+                    zoomedImg.classList.add('zoomed-img');
+                    // 创建一个新的img元素，用于显示放大后的图片
+                    var img = document.createElement('img');
+                    img.src = this.src;
+                    // 将img元素添加到zoomedImg元素中
+                    zoomedImg.appendChild(img);
+                    // 将zoomedImg元素添加到页面中
+                    document.body.appendChild(zoomedImg);
+                    // 添加点击事件，点击zoomedImg元素时，将其从页面中移除
+                    zoomedImg.addEventListener('click', function () {
+                        document.body.removeChild(zoomedImg);
+                    });
+                });
+            });
+        </script>
+
+    </div>
+</body>
+
+</html>
+
+
+
+<!-- 下载模块案例
+        <div class="wrapper">
+            <div class="downloads">
+                <h2>
+                    资源名称
+                </h2>
+                <span>
+                    资源具体描述
+                </span>
+                <div class="image-container"><img src="./图片地址1" alt="" class="zoomable-image"></div>
+                <div class="image-container"><img src="./图片地址2" alt="" class="zoomable-image"></div>
+                <div class="image-container"><img src="./图片地址3" alt="" class="zoomable-image"></div>
+                <div class="download-buttons">
+                    <h3>下载地址</h3>
+                    <p>百度网盘下载：<button class="download-button" onclick="copyToClipboard('下载地址1')">复制下载地址</button></p>
+                    <p>蓝奏云密下载：<button class="download-button" onclick="copyToClipboard('下载地址2')">复制下载地址</button></p>
+                    <p>咱自己家下载：<button class="download-button" onclick="copyToClipboard('下载地址3')">复制下载地址</button></p>
+                </div>
+            </div>
+        </div> -->

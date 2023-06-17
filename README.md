@@ -12,31 +12,57 @@
 
 > 2023年6月17日：
 
-自学Stable Diffusion然后用PS修改替换了原本的个人介绍的主图：![浅色模式](./image/top.png)
+我在一天看网页的时候发现一个问题：在网页处于暗色模式的时候PC端的滚动条还是白色，特别难看![难看！](./README/2023年6月17日3.png)
 
+所以说在原本的CSS文件中添加了修改滚动条样式的代码：
 
+`/* 修改滚动条的颜色 */
 
+::-webkit-scrollbar {
 
+ width: 12px; /* 设置滚动条的宽度 */
 
+ background-color: #333; /* 设置滚动条的背景颜色 */
 
+}
 
+/* 修改滚动条滑块的样式 */
 
+::-webkit-scrollbar-thumb {
 
+ background-color: #666; /* 设置滚动条滑块的颜色 */
 
+ border-radius: 6px; /* 设置滚动条滑块的圆角 */
 
+}
 
+/* 修改滚动条滑块在hover状态下的样式 */
 
+::-webkit-scrollbar-thumb:hover {
 
+ background-color: #999; /* 设置滚动条滑块在hover状态下的颜色 */
 
+}
 
+/* 修改滚动条轨道的样式 */
 
+::-webkit-scrollbar-track {
 
+ background-color: #222; /* 设置滚动条轨道的颜色 */
 
+}
 
+/* 修改滚动条轨道在hover状态下的样式 */
 
+::-webkit-scrollbar-track:hover {
 
+ background-color: #333; /* 设置滚动条轨道在hover状态下的颜色 */
 
+}`
 
+自学Stable Diffusion然后用PS修改替换了原本的个人介绍的主图：![浅色模式（左）深色模式（右）](./README/2023年6月17日.png)
 
+页面效果：
 
+![效果图](./README/2023年6月17日2.png)
 

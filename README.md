@@ -12,8 +12,7 @@
 
 > 2023年6月17日：
 
-自学Stable Diffusion然后用PS修改替换了原本的个人介绍的主图：![浅色模式](./images/top.png)
-
+自学Stable Diffusion然后用PS修改替换了原本的个人介绍的主图：![浅色模式](./image/top.png)
 
 
 

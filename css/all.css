@@ -46,3 +46,7 @@ body .shell-main-footer {
   font: 100 30px 'font-r';
   background-color: #ffa929;
 }
+
+.shell-main-footer a {
+  margin: 0 15px;
+}

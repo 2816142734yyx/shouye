@@ -48,7 +48,7 @@
             cursor: pointer;
             position: fixed;
             top: 85%;
-            right: 1.9%;
+            right: 10%;
             z-index: 9999;
             /* 将z-index属性的值设置为9999 */
             background-color: #fff;
@@ -78,6 +78,96 @@
             font-size: 18px;
             color: #aaa;
         }
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 100px 50px;
+            padding: 300px 20px;
+        }
+
+        .container .card {
+            position: relative;
+            width: 350px;
+            height: 300px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 45px 80px rgba(0, 0, 0, .15);
+            transition: 0.5s;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .container .card:hover {
+            height: 400px;
+        }
+
+        .container .card .imgBox {
+            position: absolute;
+            top: 20px;
+            width: 300px;
+            height: 220px;
+            border-radius: 12px;
+            transition: 0.5s;
+            overflow: hidden;
+        }
+
+        .container .card:hover .imgBox {
+            top: -100px;
+            scale: 0.75;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, .2);
+        }
+
+        .container .card .imgBox img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .container .card .content {
+            position: absolute;
+            top: 252px;
+            width: 100%;
+            padding: 0 30px;
+            height: 35px;
+            overflow: hidden;
+            text-align: center;
+            transition: 0.5s;
+        }
+
+        .container .card:hover .content {
+            top: 130px;
+            height: 250px;
+        }
+
+        .container .card .content h2 {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--clr);
+        }
+
+        .container .card .content p {
+            color: #333;
+        }
+
+        .container .card .content a {
+            position: relative;
+            top: 15px;
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--clr);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 8px;
+        }
     </style>
 </head>
 
@@ -106,24 +196,24 @@
 
 
             <div class="container">
-                <div class="card" style="--clr: #009688;">
+                <div class="card" style="--clr: #00dfc8;">
                     <div class="imgBox">
-                        <img src="./image/wz.png">
+                        <img src="./image/视频.png">
                     </div>
                     <div class="content">
                         <h2>阿魂视频网</h2>
                         <p>自由轻松观看电影、电视剧、动漫，图集等众多内容</p>
-                        <a href="#">测试中</a>
+                        <a href="http://www.nitsol.xyz:6564/">走你</a>
                     </div>
                 </div>
-                <div class="card" style="--clr: #ff3e7f;">
+                <div class="card" style="--clr: #ff679a;">
                     <div class="imgBox">
-                        <img src="./image/logo.jpg">
+                        <img src="./image/网盘.png">
                     </div>
                     <div class="content">
                         <h2>魂盘</h2>
                         <p>自在不限量存储你想存储的东西，无任何违规检测，自在快活（邀请）</p>
-                        <a href="https://nitsol.xyz">测试中</a>
+                        <a href="http://www.nitsol.xyz:7892/">走你</a>
                     </div>
                 </div>
                 <div class="card" style="--clr: #03a9f4;">
@@ -131,37 +221,7 @@
                         <img src="./image/wz.png">
                     </div>
                     <div class="content">
-                        <h2>测试测试</h2>
-                        <p>测试测试测试测试测试测试测试测试测试测试测试测试测试测试</p>
-                        <a href="#">走你</a>
-                    </div>
-                </div>
-                <div class="card" style="--clr: #009688;">
-                    <div class="imgBox">
-                        <img src="./image/TU.jpg">
-                    </div>
-                    <div class="content">
-                        <h2>测试测试</h2>
-                        <p>测试测试测试测试测试测试测试测试测试测试测试测试测试测试</p>
-                        <a href="#">走你</a>
-                    </div>
-                </div>
-                <div class="card" style="--clr: #ff3e7f;">
-                    <div class="imgBox">
-                        <img src="./image/logo.jpg">
-                    </div>
-                    <div class="content">
-                        <h2>测试测试</h2>
-                        <p>测试测试测试测试测试测试测试测试测试测试测试测试测试测试</p>
-                        <a href="#">走你</a>
-                    </div>
-                </div>
-                <div class="card" style="--clr: #03a9f4;">
-                    <div class="imgBox">
-                        <img src="./image/wz.png">
-                    </div>
-                    <div class="content">
-                        <h2>测试测试</h2>
+                        <h2>不知道干嘛</h2>
                         <p>测试测试测试测试测试测试测试测试测试测试测试测试测试测试</p>
                         <a href="#">走你</a>
                     </div>

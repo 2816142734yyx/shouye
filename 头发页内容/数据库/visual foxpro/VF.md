@@ -259,6 +259,10 @@
 
 **判断左边的字符串是否为右边的字符串**
 
+### ！
+
+**逻辑非**
+
 ### <>、#、！=
 
 **不等于**
@@ -296,6 +300,31 @@ nComplex = 3 + 4*I   && 定义一个复数
 
 总之，ABS 函数在 VFP 中的作用与其他编程语言中的作用类似，都是计算一个数的绝对值。在 VFP 中，ABS 函数还可以用于计算复数的模长。
 
+### ASC
+
+**数值转换为ASCII码**
+
+语法如下：
+
+```vfp
+ASC(cExpression)
+```
+
+其中，cExpression表示要获取ASCII码值的字符表达式。
+
+以下是一个示例：
+
+```vfp
+cChar = "A"
+nAscii = ASC(cChar)
+```
+
+在上述示例中，cChar的值为"A"，我们使用ASC函数获取它的ASCII码值。因此，nAscii的值将为65。
+
+ASC函数返回一个整数值，表示给定字符的ASCII码值。ASCII码是一种将字符映射为数字的编码系统，每个字符都有一个对应的唯一的ASCII码值。
+
+ASC函数在处理字符时非常有用，可以用于字符的比较、排序以及其他需要基于字符的操作。
+
 ### AT()
 
 **从一个字符串查另一个字符串位置**
@@ -325,10 +354,83 @@ ATC()函数的语法和AT()函数类似，只是它是不区分大小写的，�
 
 需要注意的是，ATC()函数的性能比AT()函数差，因为它需要进行字符串的转换和比较。
 
+### ALLT
+
+**去除字符串中的尾随空格**
+
+语法如下：
+
+```vfp
+ALLT(cExpression)
+```
+
+其中，cExpression表示要处理的字符串表达式。
+
+ALLT函数会将输入字符串中的尾随空格去除，并返回处理后的字符串。如果字符串中没有尾随空格，则返回原始字符串。
+
+以下是一个示例：
+
+```vfp
+cString = "Hello World!     "
+cTrimmedString = ALLT(cString)
+```
+
+在上述示例中，cString的值为"Hello World! "，包含多个尾随空格。使用ALLT函数对cString进行处理后，cTrimmedString的值将变为"Hello World!"，即去除了尾随空格的字符串。
+
+ALLT函数常用于处理用户输入或从数据库中读取的字符串，以确保数据的一致性和准确性。
+
 > ## B
->
+
+### BEWTEEN
+
+**逻辑运算符，判断一个值是否在两个给定的值之间**
+
+其语法如下：
+
+```vfp
+value BETWEEN startValue AND endValue
+```
+
+其中，value表示要判断的值，startValue和endValue分别表示范围的起始值和结束值。
+
+BEWTEEN运算符的使用可以用于条件判断或筛选数据。例如，可以使用如下语句筛选出年龄在20到30之间的人：
+
+```vfp
+SELECT * FROM myTable WHERE age BETWEEN 20 AND 30
+```
+
+上述语句将返回myTable表中年龄在20到30之间的记录。
+
+
 
 > ## C
+
+### CHR
+
+**ASCII码值转换为对应的字符**
+
+语法如下：
+
+```vfp
+CHR(nAscii)
+```
+
+其中，nAscii表示要转换为字符的ASCII码值。
+
+以下是一个示例：
+
+```vfp
+nAscii = 65
+cChar = CHR(nAscii)
+```
+
+在上述示例中，nAscii的值为65，我们使用CHR函数将其转换为对应的字符。因此，cChar的值将为"A"。
+
+CHR函数将给定的ASCII码值转换为对应的字符，并返回字符表达式。ASCII码是一种将字符映射为数字的编码系统，每个字符都有一个对应的唯一的ASCII码值。
+
+CHR函数在处理字符编码时非常有用，可以用于生成特定ASCII码值的字符，或者将数字转换为对应的字符形式。
+
+
 
 > ## D
 
@@ -526,7 +628,42 @@ STRTRAN(cString, cOldSubstr, cNewSubstr)
 >
 
 > ## U
->
+
+### UPPER
+
+**将字符串转换为大写**
+
+语法如下：
+
+```vfp
+UPPER(cExpression)
+```
+
+其中，cExpression表示要转换为大写的字符串表达式。
+
+以下是一个示例：
+
+```vfp
+cString = "Hello World!"
+cUpperCase = UPPER(cString)
+```
+
+在上述示例中，cString的值为"Hello World!"，我们使用UPPER函数将其转换为大写。因此，cUpperCase的值将为"HELLO WORLD!"。
+
+UPPER函数将字符串中的所有字母都转换为大写形式，并返回转换后的字符串。如果字符串中包含非字母字符，它们将保持不变。
+
+UPPER函数常用于对字符串进行大小写不敏感的比较或匹配，以及统一格式化字符串的需求。
+
+如果在UPPER函数的括号内输入的是数值，VFP会将数值先转换为字符串，然后再将字符串转换为大写形式。例如：
+
+```vfp
+vfpnNumber = 12345
+cUpperCase = UPPER(nNumber)
+```
+
+在上述示例中，nNumber的值为12345，它是一个数值类型。当我们将nNumber作为参数传递给UPPER函数时，VFP会将其先转换为字符串"12345"，然后再将该字符串转换为大写形式。因此，cUpperCase的值将为"12345"。
+
+需要注意的是，如果在UPPER函数的括号内输入的是一个非数值的表达式，VFP会在运行时抛出错误。因此，确保在使用UPPER函数时，括号内输入的是一个合法的字符串表达式或变量。
 
 > ## V
 >

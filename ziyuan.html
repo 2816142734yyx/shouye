@@ -25,6 +25,7 @@
         }
 
         .sidebar {
+
             position: fixed;
             top: 0;
             left: 0;
@@ -61,6 +62,7 @@
         }
 
         .sidebar ul {
+
             list-style-type: none;
             padding: 0;
         }
@@ -234,7 +236,7 @@
             cursor: pointer;
             position: fixed;
             top: 85%;
-            right: 1.9%;
+            right: 7%;
             z-index: 9999;
             /* 将z-index属性的值设置为9999 */
             background-color: #fff;
@@ -293,6 +295,11 @@
 
 
         @media (max-width: 600px) {
+            .sidebar {
+                display: none;
+
+            }
+
             .image-container {
                 flex-direction: column;
             }
@@ -308,7 +315,38 @@
             .download-button {
                 width: 100%;
             }
+
+            body .shell::before,
+            body .shell::after {
+                display: none;
+            }
         }
+
+        @media (max-width:768px) {
+
+            .image-container {
+                flex-direction: column;
+            }
+
+            .button-container {
+                margin-top: 10px;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+
+            .download-button {
+                width: 100%;
+            }
+
+            body .shell::before,
+            body .shell::after {
+                display: none;
+            }
+
+        }
+
 
 
         @keyframes show {
@@ -413,10 +451,69 @@
                     <p>蓝奏云下载：<button class="download-button"
                             onclick="copyToClipboard('https://wwwx.lanzoum.com/iu7su0xxaawj  密码:ffjw')">复制下载地址</button>
                     </p>
-                    <p>咱自己家下载：暂未开放</p>
+                    <p>阿魂云盘下载：<button class="download-button"
+                            onclick="copyToClipboard('http://www.nitsol.xyz:7892/down.php/b2e0f4a508dfa44ce14a3421f316dff5.exe')">复制下载地址</button>
                 </div>
             </div>
         </div>
+
+        <div class="wrapper">
+            <div class="downloads">
+                <h2>
+                    oCam极简录屏音
+                </h2>
+                <span>
+                    oCam是一款无需按照的免费屏幕截图、屏幕录像、音频录制软件,还可以录制你的桌面屏幕。
+                </span>
+                <div class="image-container"><img src="./资源页内容/软件下载/oCam极简录屏音/1.png" alt="" class="zoomable-image">
+                </div>
+                <div class="image-container"><img src="./资源页内容/软件下载/oCam极简录屏音/2.png" alt="" class="zoomable-image">
+                </div>
+                <div class="image-container"><img src="./资源页内容/软件下载/oCam极简录屏音/3.png" alt="" class="zoomable-image">
+                </div>
+                <div class="download-buttons">
+                    <h3>下载地址</h3>
+                    <p>百度网盘下载：<button class="download-button"
+                            onclick="copyToClipboard('https://pan.baidu.com/s/1D3ztUt8oqwed4u8bitPYvg?pwd=ahun')">复制下载地址</button>
+                    </p>
+                    <p>蓝奏云密下载：<button class="download-button"
+                            onclick="copyToClipboard('https://wwwx.lanzoum.com/i5D4o0y70g6j  密码:1gpi')">复制下载地址</button>
+                    </p>
+                    <p>阿魂云盘下载：<button class="download-button"
+                            onclick="copyToClipboard('http://www.nitsol.xyz:7892/down.php/1cd74e3112058ee572632954abbd34b9.exe')">复制下载地址</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="downloads">
+                <h2>
+                    win10破解工具
+                </h2>
+                <span>
+                    win10破解工具内包涵win10正版激活和关闭win10防火墙杀毒工具，解压后双击即用
+                </span>
+                <div class="image-container"><img src="./资源页内容/软件下载/win10破解工具/1.png" alt="" class="zoomable-image">
+                </div>
+                <div class="image-container"><img src="./资源页内容/软件下载/win10破解工具/2.png" alt="" class="zoomable-image">
+                </div>
+                <div class="image-container"><img src="./资源页内容/软件下载/win10破解工具/3.png" alt="" class="zoomable-image">
+                </div>
+                <div class="download-buttons">
+                    <h3>下载地址</h3>
+                    <p>百度网盘下载：<button class="download-button"
+                            onclick="copyToClipboard('https://pan.baidu.com/s/1911D5_ZryYBYdbJwfaYYKg?pwd=ahun')">复制下载地址</button>
+                    </p>
+                    <p>蓝奏云密下载：<button class="download-button"
+                            onclick="copyToClipboard('https://wwwx.lanzoum.com/inwWK0y716sh  密码:9zvc')">复制下载地址</button>
+                    </p>
+                    <p>阿魂云盘下载：<button class="download-button"
+                            onclick="copyToClipboard('http://www.nitsol.xyz:7892/down.php/ace3ffae7021b37257561628218d049b.7z')">复制下载地址</button>
+                </div>
+            </div>
+        </div>
+
+
         <!-- 下载模块 -->
         <div class="wrapper">
             <div class="downloads">
@@ -435,7 +532,8 @@
                     <p>百度网盘下载：<button class="download-button"
                             onclick="copyToClipboard('https://pan.baidu.com/s/1gLNAQaltJR1jjfPOQTIdSQ?pwd=ahun')">复制下载地址</button>
                     </p>
-                    <p>咱自己家下载：暂未开放</p>
+                    <p>阿魂云盘下载：<button class="download-button"
+                            onclick="copyToClipboard('http://www.nitsol.xyz:7892/down.php/59513e33377004230e8b3c571a39b371.zip')">复制下载地址</button>
                 </div>
             </div>
         </div>
@@ -462,9 +560,10 @@
                 <div class="download-buttons">
                     <h3>下载地址</h3>
                     <p>百度网盘下载：<button class="download-button"
-                            onclick="copyToClipboard('https://pan.baidu.com/s/11bMzdSWj3bMMLOwQf4buDw?pwd=ahun')">复制下载地址</button>
+                            onclick="copyToClipboard('https://pan.baidu.com/s/1HJoVfZAkoEvPmBgBEoTq_A?pwd=ahun')">复制下载地址</button>
                     </p>
-                    <p>咱自己家下载：暂未开放</p>
+                    <p>阿魂云盘下载：<button class="download-button"
+                            onclick="copyToClipboard('http://wp.nitsol.xyz/down.php/db1ac22912d41999d45286d7b32dee50.zip')">复制下载地址</button>
                     </p>
                 </div>
             </div>
@@ -495,7 +594,8 @@
                     <p>百度网盘下载：<button class="download-button"
                             onclick="copyToClipboard('https://pan.baidu.com/s/1_DP3crS2lYWoQ3nnXTfzug?pwd=ahun')">复制下载地址</button>
                     </p>
-                    <p>咱自己家下载：暂未开放</p>
+                    <p>阿魂云盘下载：<button class="download-button"
+                            onclick="copyToClipboard('http://wp.nitsol.xyz/down.php/a7fd8f0d18464e06a846cb5cadf0735e.zip')">复制下载地址</button>
                     </p>
                 </div>
             </div>
@@ -526,7 +626,8 @@
                     <p>百度网盘下载：<button class="download-button"
                             onclick="copyToClipboard('https://pan.baidu.com/s/1TBh_tBfLCofe5C6deOdM1Q?pwd=ahun')">复制下载地址</button>
                     </p>
-                    <p>咱自己家下载：暂未开放</p>
+                    <p>阿魂云盘下载：<button class="download-button"
+                            onclick="copyToClipboard('http://wp.nitsol.xyz/down.php/3a53af7b36fddc2cb1e0f95c4e150aea.zip')">复制下载地址</button>
                     </p>
                 </div>
             </div>
@@ -558,7 +659,8 @@
                     <p>百度网盘下载：<button class="download-button"
                             onclick="copyToClipboard('https://pan.baidu.com/s/1FV0FRXUGmjpm6LrR66aLLA?pwd=ahun')">复制下载地址</button>
                     </p>
-                    <p>咱自己家下载：暂未开放</p>
+                    <p>阿魂云盘下载：<button class="download-button"
+                            onclick="copyToClipboard('http://wp.nitsol.xyz/down.php/4cd33fcdd892eee5be96259734f9fe1f.zip')">复制下载地址</button>
                     </p>
                 </div>
             </div>

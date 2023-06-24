@@ -8,9 +8,11 @@ body .shell-top {
   overflow: hidden;
 }
 
-/* 开头视频大小 */
-body .shell-top video {
-  width: 100.5%;
+/* 开头图片的大小 */
+body .shell-top .background-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 /* 开头圆角矩形背景 */
@@ -745,10 +747,8 @@ body .shell-main-bottom-bottom ul li span {
 
 @media (max-width:768px) {
 
-  body .shell-top video {
-    width: 105%;
-  }
 
+  
   body .shell-top .word {
     width: 80%;
     height: 500px;
@@ -838,9 +838,7 @@ body .shell-main-bottom-bottom ul li span {
 
 @media (max-width:600px) {
 
-  body .shell-top video {
-    width: 105%;
-  }
+
 
   body .shell-main-bottom {
     margin: 600px 0;
